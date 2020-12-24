@@ -1,0 +1,2 @@
+Последовательность команд, создающая структуру каталогов
+D:\STUD>md LABRAB\A1 LABRAB\A2\B2\C2 LABRAB\B1 LABRAB\A2\C1

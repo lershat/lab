@@ -1,0 +1,6 @@
+1. python3 interactor.py >out.txt 2>err.txt
+2. В файл 2>err.txt.
+3. /home/alex/Pictures
+4. –quiet или –q
+5. Будут скачаны html и jpg файлы, но html сразу будет удален.
+6. tar -zxvf quiz_archive.tar.gz

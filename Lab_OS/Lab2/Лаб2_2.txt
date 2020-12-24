@@ -1,0 +1,244 @@
+Microsoft Windows [Version 10.0.18363.1139]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2019. Все права защищены.
+
+C:\Users\mrsha>D:
+
+D:\>md STUD+
+
+D:\>cd STUD+
+
+D:\STUD+>md ABC\DEF
+
+D:\STUD+>md ABC\KLMNO
+
+D:\STUD+>md TEXT
+
+D:\STUD+>cd TEXT
+
+D:\STUD+\TEXT>copy con text1.txt
+12345. Это текст первого файла
+^Z
+Скопировано файлов:         1.
+
+D:\STUD+\TEXT>copy con text2.doc
+6789. Это текст второго файла^Z
+Скопировано файлов:         1.
+
+D:\STUD+\TEXT>copy con text3.inf
+6789. Это текст третьего файла^Z
+Скопировано файлов:         1.
+
+D:\STUD+\TEXT>cd D:\STUD+\ABC\KLMNO
+
+D:\STUD+\ABC\KLMNO>copy con file.my
+Удары сердца твердят мне, что я не убит.
+Сквозь обоженные веки я вижу рассвет.
+Я открывая глаза, надо мною стоит
+Великий ужас, которому имени нет
+^Z
+Скопировано файлов:         1.
+
+D:\STUD+\ABC\KLMNO>cd..
+
+D:\STUD+\ABC>cd..
+
+D:\STUD+>copy con fio.txt
+Егжов Лев Дмитриевич
+^Z
+Скопировано файлов:         1.
+
+D:\STUD+>copy con inf.txt
+МКИС-24
+^Z
+Скопировано файлов:         1.
+
+D:\STUD+>dir
+ Том в устройстве D имеет метку Data
+ Серийный номер тома: D8D8-CE65
+
+ Содержимое папки D:\STUD+
+
+02.11.2020  08:27    <DIR>          .
+02.11.2020  08:27    <DIR>          ..
+02.11.2020  03:50    <DIR>          ABC
+02.11.2020  08:27                22 fio.txt
+02.11.2020  08:27                 9 inf.txt
+02.11.2020  04:00    <DIR>          TEXT
+               2 файлов             31 байт
+               4 папок  100 620 181 504 байт свободно
+
+
+D:\STUD+>copy TEXT\text1.txt ABC\DEF
+Скопировано файлов:         1.
+
+D:\STUD+>copy fio.txt+inf.txt myfile.inf
+fio.txt
+inf.txt
+Скопировано файлов:         1.
+
+D:\STUD+>cd ABC\KLMNO
+
+
+D:\STUD+\ABC\KLMNO>cd \
+
+D:\>cd STUD+\ABC
+
+D:\STUD+\ABC>copy KLMNO\file.my DEF\copyfile.doc
+Скопировано файлов:         1.
+
+D:\STUD+\ABC>dir
+ Том в устройстве D имеет метку Data
+ Серийный номер тома: D8D8-CE65
+
+ Содержимое папки D:\STUD+\ABC
+
+02.11.2020  03:50    <DIR>          .
+02.11.2020  03:50    <DIR>          ..
+02.11.2020  09:08    <DIR>          DEF
+02.11.2020  08:17    <DIR>          KLMNO
+               0 файлов              0 байт
+               4 папок  100 620 181 504 байт свободно
+
+D:\STUD+\ABC>cd..
+
+D:\STUD+>type myfile.inf
+Егжов Лев Дмитриевич
+МКИС-24
+
+D:\STUD+>type *.*
+
+fio.txt
+
+
+Егжов Лев Дмитриевич
+
+inf.txt
+
+
+МКИС-24
+
+myfile.inf
+
+
+Егжов Лев Дмитриевич
+МКИС-24
+
+D:\STUD+>ren myfile.inf my.txt
+
+D:\STUD+>dir
+ Том в устройстве D имеет метку Data
+ Серийный номер тома: D8D8-CE65
+
+ Содержимое папки D:\STUD+
+
+02.11.2020  10:34    <DIR>          .
+02.11.2020  10:34    <DIR>          ..
+02.11.2020  03:50    <DIR>          ABC
+02.11.2020  08:27                22 fio.txt
+02.11.2020  08:27                 9 inf.txt
+02.11.2020  08:41                32 my.txt
+02.11.2020  04:00    <DIR>          TEXT
+               3 файлов             63 байт
+               4 папок  100 620 181 504 байт свободно
+
+D:\STUD+>del ABC\DEF\copyfile.doc
+
+D:\STUD+>dir ABC\DEF
+ Том в устройстве D имеет метку Data
+ Серийный номер тома: D8D8-CE65
+
+ Содержимое папки D:\STUD+\ABC\DEF
+
+02.11.2020  10:36    <DIR>          .
+02.11.2020  10:36    <DIR>          ..
+02.11.2020  03:59                32 text1.txt
+               1 файлов             32 байт
+               2 папок  100 620 181 504 байт свободно
+
+D:\STUD+>copy TEXT\*.* CDE\FGH
+TEXT\text1.txt
+Системе не удается найти указанный путь.
+Скопировано файлов:         0.
+
+D:\STUD+>copy TEXT\*.* md CDE\FGH
+Ошибка в синтаксисе команды.
+
+D:\STUD+> md CDE\FGH
+
+D:\STUD+>copy TEXT\*.* md CDE\FGH
+Ошибка в синтаксисе команды.
+
+D:\STUD+>copy TEXT\*.* CDE\FGH
+TEXT\text1.txt
+TEXT\text2.doc
+TEXT\text3.inf
+Скопировано файлов:         3.
+
+D:\STUD+>cd CDE\FGH
+
+D:\STUD+\CDE\FGH>dir
+ Том в устройстве D имеет метку Data
+ Серийный номер тома: D8D8-CE65
+
+ Содержимое папки D:\STUD+\CDE\FGH
+
+02.11.2020  10:39    <DIR>          .
+02.11.2020  10:39    <DIR>          ..
+02.11.2020  03:59                32 text1.txt
+02.11.2020  04:00                29 text2.doc
+02.11.2020  04:00                30 text3.inf
+               3 файлов             91 байт
+               2 папок  100 620 181 504 байт свободно
+
+D:\STUD+\CDE\FGH>ren *.* *.old
+
+D:\STUD+\CDE\FGH>copy text1.old+text2.old+text3.old all.txt
+text1.old
+text2.old
+text3.old
+Скопировано файлов:         1.
+
+D:\STUD+\CDE\FGH>del *.old
+
+D:\STUD+\CDE\FGH>dir
+ Том в устройстве D имеет метку Data
+ Серийный номер тома: D8D8-CE65
+
+ Содержимое папки D:\STUD+\CDE\FGH
+
+02.11.2020  10:41    <DIR>          .
+02.11.2020  10:41    <DIR>          ..
+02.11.2020  10:41                92 all.txt
+               1 файлов             92 байт
+               2 папок  100 620 181 504 байт свободно
+
+D:\STUD+\CDE\FGH>cd..
+
+D:\STUD+\CDE>cd..
+
+D:\STUD+>cd TEXT
+
+D:\STUD+\TEXT>del *.*
+D:\STUD+\TEXT\*.*, вы уверены [Y(да)/N(нет)]? y
+
+D:\STUD+\TEXT>cd..
+
+D:\STUD+>rd TEXT
+
+D:\STUD+>dir
+ Том в устройстве D имеет метку Data
+ Серийный номер тома: D8D8-CE65
+
+ Содержимое папки D:\STUD+
+
+02.11.2020  10:43    <DIR>          .
+02.11.2020  10:43    <DIR>          ..
+02.11.2020  03:50    <DIR>          ABC
+02.11.2020  10:39    <DIR>          CDE
+02.11.2020  08:27                22 fio.txt
+02.11.2020  08:27                 9 inf.txt
+02.11.2020  08:41                32 my.txt
+               3 файлов             63 байт
+               4 папок  100 620 181 504 байт свободно
+
+D:\STUD+>

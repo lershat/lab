@@ -1,0 +1,56 @@
+Индивидуальное задание:
+В С1 создать два файла с расширением .txt
+1 файл в С2 - с расширением .doc
+"склеить" все эти файлы в файл my.dat
+(my.dat должен находиться в LABRAB.)
+Переименовать файлы с расширением .txt в .cpp .
+Вывести содержимое файла my.dat в консоль
+
+C:\>D:
+
+D:\>cd STUD
+
+D:\STUD>D:
+
+D:\STUD>cd \
+
+D:\>cd STUD\LABRAB\A2\C1
+
+D:\STUD\LABRAB\A2\C1>copy con text1.txt
+Текст первого файла^Z
+Скопировано файлов:         1.
+
+D:\STUD\LABRAB\A2\C1>copy con text2.txt
+Текст второго файла^Z
+Скопировано файлов:         1.
+
+D:\STUD\LABRAB\A2\C1>cd D:\STUD\LABRAB\A2\B2\C2
+
+D:\STUD\LABRAB\A2\B2\C2>copy con doc3.doc
+Текст третьего файла^Z
+Скопировано файлов:         1.
+
+D:\STUD\LABRAB\A2\B2\C2>copy doc3.doc D:\STUD\LABRAB
+Скопировано файлов:         1.
+
+D:\STUD\LABRAB\A2\B2\C2>cd D:\STUD\LABRAB\A2\C1
+
+D:\STUD\LABRAB\A2\C1>copy *.txt D:\STUD\LABRAB
+text1.txt
+text2.txt
+Скопировано файлов:         2.
+
+D:\STUD\LABRAB\A2\C1>cd..
+
+D:\STUD\LABRAB\A2>cd..
+
+D:\STUD\LABRAB>copy *.txt+doc3.doc my.dat
+text1.txt
+text2.txt
+doc3.doc
+Скопировано файлов:         1.
+
+D:\STUD\LABRAB>ren *.txt *.cpp
+
+D:\STUD\LABRAB>type my.dat
+Текст первого файлаТекст второго файлаТекст третьего файла

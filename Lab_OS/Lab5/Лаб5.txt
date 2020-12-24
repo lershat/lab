@@ -1,0 +1,14 @@
+lev@lev-VirtualBox:~$ ls
+ Видео       Загрузки      Музыка         'Рабочий стол'
+ Документы   Изображения   Общедоступные   Шаблоны
+lev@lev-VirtualBox:~$ mkdir LABRAB
+lev@lev-VirtualBox:~$ ls
+ LABRAB   Документы   Изображения   Общедоступные   Шаблоны
+ Видео    Загрузки    Музыка       'Рабочий стол'
+lev@lev-VirtualBox:~$ cd LABRAB
+lev@lev-VirtualBox:~/LABRAB$ mkdir A1 B2 -p A2/C1 -p A2/B2/C2 
+lev@lev-VirtualBox:~/LABRAB$ mkdir A1 B1 -p A2/C1 -p A2/B2/C2 
+lev@lev-VirtualBox:~/LABRAB$ ls
+A1  A2  B1
+lev@lev-VirtualBox:~/LABRAB$ pwd
+/home/lev/LABRAB
