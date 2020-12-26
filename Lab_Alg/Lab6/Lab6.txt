@@ -1,0 +1,112 @@
+#Лабораторная 6
+
+#Задание 1
+
+from numpy import zeros, dot, savetxt
+from numpy.linalg import norm
+
+def CosRast(u, v):
+    return 1.0 - (dot(u, v) / (norm(u) * norm(v)))
+ 
+if __name__ == "__main__":
+    #Подключаем файл со строками
+    with open("text.txt") as f:
+        # Считаем строки
+        lines = sum(1 for _ in f)
+        f.seek(0)
+        
+        import re
+        VseSlova = {}
+        nstr, nsl = 0, 0
+        #Разделяем на токены
+        for line in f:
+            p = re.compile(r"[^a-z]+")
+            VseToken = p.split(line.lower())
+            VseToken.pop()
+            for Token in VseToken:
+                if Token not in VseSlova:
+                    VseSlova[Token] = {
+                        "index": nsl,
+                        "occurrences": [0] * lines
+                    }
+                    nsl += 1
+                elif VseSlova[Token]["occurrences"][nstr] != 0:
+                    continue
+                VseSlova[Token]["occurrences"][nstr] = VseToken.count(Token)    
+            nstr += 1
+
+        arr = zeros((lines, len(VseSlova)))
+        
+        # Проводим поиск
+        for Slovo in VseSlova:
+            i, j = 0, VseSlova[Slovo]["index"]
+            for occ in VseSlova[Slovo]["occurrences"]:
+                arr[i, j] = occ
+                i += 1
+    
+        # Вычисляем расстояние
+        dist = [] 
+        u = arr[0,] 
+        for i in range(1, lines):
+            v = arr[i,]
+            dist.append({"index": i, "distance": CosRast(u, v)})    
+        
+        dist.sort(key=lambda x: x["distance"])
+        print("Первое: %d. Второе: %d" % (
+            dist[0]["index"],
+            dist[1]["index"],
+        ))
+
+#Задание 2
+
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import linalg
+
+def f(x):
+    return np.sin(0.2*x)*np.exp(0.1*x)+5*np.exp(0.5*(-x))
+
+A = [[1,1], [1,15]]
+matrix = np.array (A)
+b = [f(1.),f(15.)]
+v = np.linalg.solve(A, b)
+
+def f1(x):
+  return v[0] + v[1]*x
+
+print (v)
+
+A = [[1,1,1], [1,8*1,8*2],[1,15*1,15*2]]
+matrix = np.array (A)
+b = [f(1.),f(8.),f(15.)]
+v1 = np.linalg.solve(A, b)
+
+def f2(x):
+  return v1[0] + v1[1] + v1[2]*x
+print (v1)
+
+A = [[1,1**1,1**2,1**3], [1,4**1,4**2,4**3],[1,10**1,10**2,10**3],[1,15**1,15**2,15**3]]
+matrix = np.array (A)
+b = [f(1.),f(4.),f(10.),f(15.)]
+v2 = np.linalg.solve(A, b)
+
+def f3(x):
+    return v2[0] + v2[1] + v2[2] + v2[3]*x
+
+print (v2)
+
+
+from matplotlib import pylab as plt
+
+fig, ax = plt.subplots()
+x = np.arange(1, 15, 0.1)
+ax.plot(x, f(x), color="red", label= "f(x)")
+ax.plot(x, f1(x), color="brown", label= "f1(x)")
+ax.plot(x, f2(x), color="green", label= "f2(x)")
+ax.plot(x, f3(x), color="black", label= "f3(x)")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.legend()
+
+plt.show()
